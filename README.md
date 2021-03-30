@@ -3,6 +3,8 @@
 
 This buildpack installs the most recent commit of V from [https://github.com/vlang/v](https://github.com/vlang/v).
 
+### Since I am no longer interested in the V language, this repository is no longer maintained. If you are interested in taking over, let me know by opening an issue. 
+
 ## Installation
 
 ### Create a Heroku app with this buildpack
