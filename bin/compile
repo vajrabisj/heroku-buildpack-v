@@ -37,6 +37,7 @@ PKGLIST=$BUILD_DIR/vpm.txt
 if [ -f "$PKGLIST" ]; then
     echo "Found vpm.txt, installing VPM packages" | arrow
     while read p; do
+      echo "test" | arrow
       echo "Installing $p" | indent | arrow
       $V_DIR/v install $p
     done < $PKGLIST
