@@ -36,8 +36,8 @@ make
 PKGLIST=$BUILD_DIR/vpm.txt
 if [ -f "$PKGLIST" ]; then
     echo "Found vpm.txt, installing VPM packages" | arrow
+    echo "test"
     while read p; do
-      echo "test" | arrow
       echo "Installing $p" | indent | arrow
       $V_DIR/v install $p
     done < $PKGLIST
@@ -50,7 +50,8 @@ if [ -f "$REMOTELIST" ]; then
     echo "Found remote.txt, cloning remote git repo to ~/.vmodules" | arrow
     while read -ra arr; do
       echo "Cloning ${arr[0]} into ${arr[1]}" | indent | arrow
-      git clone ${arr[0]} ~/.vmodules/${arr[1]}
+      git clone ${arr[0]} ~/${arr[1]}
+      ln -s ~/${arr[1] ~/.vmodules
     done < $REMOTELIST
 else
     echo "remote.txt not found - do not install any thirdparty module from a remote repo." | arrow
