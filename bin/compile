@@ -33,6 +33,8 @@ cd $V_DIR
 echo "Building V..." | arrow
 make
 
+./v symlink
+
 PKGLIST=$BUILD_DIR/vpm.txt
 if [ -f "$PKGLIST" ]; then
     echo "Found vpm.txt, installing VPM packages" | arrow
