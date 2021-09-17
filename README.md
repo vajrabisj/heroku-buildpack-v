@@ -51,8 +51,8 @@ https://some_other_url/username/another_repo.git repo_author_name module_name_to
 
 creates the following directories:
 ```
-~/.vmodules/module_name
-~/.vmodules/module_name_too
+~/.vmodules/repo_author_name/module_name
+~/.vmodules/repo_author_name/module_name_too
 ```
 
 You can omit `remote.txt`, no repos will be cloned then.
