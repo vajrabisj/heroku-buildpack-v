@@ -42,17 +42,17 @@ You can omit `vpm.txt`, no packages will be installed then.
 
 Find available VPM modules in the [VPM modules directory](https://vlang.io/modules).
 
-`remote.txt` is a list of remote git repo urls and their module name that will be installed using `git clone remote_url ~/.vmodules/module_name` before your app is compiled. List one repo and module name per line separated by a space and *terminate with a new line*:
+`remote.txt` is a list of remote git repo urls and their module name that will be installed using `git clone remote_url ~/repo_author_name/module_name` and `ln -s ~/repo_author_name ~/.vmodules/` before your app is compiled. List one repo and module name per line separated by a space and *terminate with a new line*:
 
 ```
-https://www.github.com/username/repo_name.git module_name
-https://some_other_url/username/another_repo.git module_name_too
+https://www.github.com/username/repo_name.git repo_author_name module_name
+https://some_other_url/username/another_repo.git repo_author_name module_name_too
 ```
 
 creates the following directories:
 ```
-~/.vmodules/module_name
-~/.vmodules/module_name_too
+~/.vmodules/repo_author_name/module_name
+~/.vmodules/repo_author_name/module_name_too
 ```
 
 You can omit `remote.txt`, no repos will be cloned then.

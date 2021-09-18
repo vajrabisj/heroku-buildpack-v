@@ -48,14 +48,16 @@ REMOTELIST=$BUILD_DIR/remote.txt
 if [ -f "$REMOTELIST" ]; then
     echo "Found remote.txt, cloning remote git repo to ~/.vmodules" | arrow
     while read -ra arr; do
-      echo "Cloning ${arr[0]} into ${arr[1]}" | indent | arrow
-      git clone ${arr[0]} ~/.vmodules/${arr[1]}
+      echo "Cloning ${arr[0]} into ~/${arr[1]}/${arr[2]}" | indent | arrow
+      git clone ${arr[0]} ~/${arr[1]}/${arr[2]}
+      echo "Symlink ~/${arr[1]} ~/.vmodules/"
+      ln -s ~/${arr[1]} ~/.vmodules/
     done < $REMOTELIST
 else
     echo "remote.txt not found - do not install any thirdparty module from a remote repo." | arrow
 fi
 
 cd $BUILD_DIR
-$V_DIR/v -prod app.v
+$V_DIR/v app.v
 
 echo "using ${v_repo} @${v_branch}" | indent
