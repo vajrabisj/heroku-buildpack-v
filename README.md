@@ -3,20 +3,20 @@
 
 This buildpack installs the most recent commit of V from [https://github.com/vlang/v](https://github.com/vlang/v).
 
-### Since I am no longer interested in the V language, this repository is no longer maintained. If you are interested in taking over, let me know by opening an issue. 
+This repo is forked from https://github.com/louis77/heroku-buildpack-v
 
 ## Installation
 
 ### Create a Heroku app with this buildpack
 
 ```sh
-$ heroku create --buildpack https://github.com/louis77/heroku-buildpack-v.git
+$ heroku create --buildpack https://github.com/zztkm/heroku-buildpack-v.git
 ```
 
 ### Set the buildpack for an existing Heroku app
 
 ```sh
-$ heroku buildpacks:set https://github.com/louis77/heroku-buildpack-v.git
+$ heroku buildpacks:set https://github.com/zztkm/heroku-buildpack-v.git
 ```
 
 
