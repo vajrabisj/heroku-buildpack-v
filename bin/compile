@@ -33,6 +33,14 @@ cd $V_DIR
 echo "Building V..." | arrow
 make
 
+VMOD=$BUILD_DIR/v.mod
+if [ -f "$VMOD" ]; then
+    echo "Found v.mod, installing VPM packages" | arrow
+    $V_DIR/v install
+else
+    echo "v.mod not found - do not install any VPM packages from v.mod" | arrow
+fi
+
 PKGLIST=$BUILD_DIR/vpm.txt
 if [ -f "$PKGLIST" ]; then
     echo "Found vpm.txt, installing VPM packages" | arrow
@@ -41,7 +49,7 @@ if [ -f "$PKGLIST" ]; then
       $V_DIR/v install $p
     done < $PKGLIST
 else
-    echo "vpm.txt not found - do not install any VPM packages" | arrow
+    echo "vpm.txt not found - do not install any VPM packages from vpm.txt" | arrow
 fi
 
 REMOTELIST=$BUILD_DIR/remote.txt
