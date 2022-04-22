@@ -33,6 +33,8 @@ cd $V_DIR
 echo "Building V..." | arrow
 make
 
+cd $BUILD_DIR
+
 VMOD=$BUILD_DIR/v.mod
 if [ -f "$VMOD" ]; then
     echo "Found v.mod, installing VPM packages" | arrow
@@ -65,7 +67,6 @@ else
     echo "remote.txt not found - do not install any thirdparty module from a remote repo." | arrow
 fi
 
-cd $BUILD_DIR
 $V_DIR/v app.v
 
 echo "using ${v_repo} @${v_branch}" | indent
